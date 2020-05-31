@@ -1,8 +1,8 @@
-const mongoose= require("mongoose");
-const {Shema}=mongoose;
+const mongoose=require('mongoose');
+const {Schema} = mongoose;
 const {compareSync,hashSync,genSaltSync}=require("bcryptjs");
 
-const UserShema = new Shema({
+const UserShema = new Schema({
     name: {type:String,require:true},
     username:{type:String,require:true},
     password:{type:String,require:true}

@@ -1,11 +1,11 @@
 const mongoose = require("mongoose");
-const {Shema} = mongoose;
+const {Schema} = mongoose;
 
-const CommentSchema = new Shema({
+const CommentSchema = new Schema({
     comment:{type:String,require:true},
     description:{type:String},
     author:{
-        type:Shema.Types.ObjectId,
+        type:Schema.Types.ObjectId,
         ref:"user",
         required:true,
         autopopulate:true

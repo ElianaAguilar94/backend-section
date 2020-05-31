@@ -1,20 +1,20 @@
 const mongoose = require("mongoose");
-const {Shema } = mongoose;
+const {Schema } = mongoose;
 
-const IdeaSchema = new Shema({
+const IdeaSchema = new Schema({
     idea:{type:String,require:true},
     description:{type:String},
     upvotes:[{type:Boolean}],
     downvotes:[{type:Boolean}],
     author:{
-        type:Shema.Types.ObjectId,
+        type:Schema.Types.ObjectId,
         ref:"user",
         required:true,
         autopopulate:true
     },
     comments:[
         {
-            type:Shema.Types.ObjectId,
+            type:Schema.Types.ObjectId,
             ref:"comment",
             required:true,
             autopopulate:true
