@@ -14,7 +14,7 @@ const {HomeService,UserService,IdeaService,CommentService}=require('../services'
 const {HomeController,UserController,IdeaController,CommentController}=require('../controllers')
 
 //routes
-const {HomeRoutes}=require('../routes/index.routes')
+const {HomeRoutes,CommentRoutes,IdeaRoutes,UserRoutes}=require('../routes/index.routes')
 const Routes=require('../routes');
 
 //models
@@ -44,7 +44,10 @@ container
         IdeaController:asClass(IdeaController.bind(IdeaController)).singleton(),
         CommentController:asClass(CommentController.bind(CommentController)).singleton()
     }).register({
-        HomeRoutes:asFunction(HomeRoutes).singleton()
+        HomeRoutes:asFunction(HomeRoutes).singleton(),
+        UserRoutes:asFunction(UserRoutes).singleton(),
+        IdeaRoutes:asFunction(IdeaRoutes).singleton(),
+        CommentRoutes:asFunction(CommentRoutes).singleton()
     }).register({
         User:asValue(User),
         Idea:asValue(Idea),

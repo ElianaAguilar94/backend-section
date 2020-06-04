@@ -20,7 +20,7 @@ class BaseService{
         return currentEntity;
     }
 
-    async gellAll(){
+    async getAll(){
         return await this.repository.getAll();
     }
 
