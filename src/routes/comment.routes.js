@@ -5,7 +5,7 @@ module.exports=function({CommentController}){
 
     router.get("/:commentId/unique",CommentController.get)
     router.get("/:ideaId",CommentController.getIdeaComments)
-    router.get("/:ideaId",CommentController.createComment)
+    router.post("/:ideaId",CommentController.createComment)
     router.patch("/:commentId",CommentController.update)
     router.delete("/:commentId",CommentController.delete)
 
